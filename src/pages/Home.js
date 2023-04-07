@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <div id="home">
             <main>
-                <Pokepic pid="1" />
+                <Pokepic pid="356" />
             </main>
         </div>
     );

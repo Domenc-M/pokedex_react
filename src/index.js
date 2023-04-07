@@ -3,12 +3,17 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider, } from "react-router-dom";
 import './scss/app.scss'
 import Home from './pages/Home';
+import PokeDetails from './pages/PokeDetails';
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Home/>,
     },
+    {
+      path: "/",
+      element: <PokeDetails/>
+    }
   ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

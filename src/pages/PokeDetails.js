@@ -1,12 +1,13 @@
 import axios from 'axios';
-import Pokepic from '../components/Pokepic.js';
 
 const Home = () => {
 
     return (
         <div id="home">
             <main>
-                <Pokepic pid="1" />
+                <div className='searchArea'>
+                    Coucou
+                </div>
             </main>
         </div>
     );

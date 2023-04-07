@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import '../scss/pokedetails.scss';
 
 class Pokepic extends React.Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class Pokepic extends React.Component {
   }
   
   render() {
-    return <div className="pokemon"><h2>This is {this.name}</h2>
+    return <div className="pokebox"><div className="pokename">{this.name}</div>
     <img src={this.img} alt={this.name}></img></div>;
   }
 }

@@ -1,14 +1,20 @@
-import axios from 'axios';
-import RandomPoke from '../components/randomPoke.js';
+import Pokepic from '../components/Pokepic.js';
 
-let rng = 50;
+    let array = [];
+    for (let i = 0; i < 6; i++) {
+        let rng = Math.random() * (1010) + 1;
+        rng = Math.trunc(rng);
+        array.push(rng);
+    }
 
 const Home = () => {
 
     return (
         <div id="home">
             <main>
-                <RandomPoke/>
+                {array.map( i => (
+                    <Pokepic pid={i}/>
+                ))}
             </main>
         </div>
     );

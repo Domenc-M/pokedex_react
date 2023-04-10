@@ -12,9 +12,11 @@ const Home = () => {
     return (
         <div id="home">
             <main>
-                {array.map( i => (
-                    <Pokepic pid={i}/>
-                ))}
+                <div class="randomPokeContainer">
+                    {array.map( i => (
+                        <Pokepic pid={i}/>
+                    ))}
+                </div>
             </main>
         </div>
     );

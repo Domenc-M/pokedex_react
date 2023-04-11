@@ -1,11 +1,17 @@
+import Pokepic from '../components/Pokepic.js';
+import {
+    useParams,
+  } from "react-router-dom";
+
 const Details = () => {
+
+    let params = useParams();
+    console.log(params.id);
 
     return (
         <div id="home">
             <main>
-                <div className='searchArea'>
-                    Coucou
-                </div>
+            <Pokepic pid={params.id}/>
             </main>
         </div>
     );

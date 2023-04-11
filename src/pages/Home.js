@@ -14,7 +14,9 @@ const Home = () => {
             <main>
                 <div class="randomPokeContainer">
                     {array.map( i => (
-                        <Pokepic pid={i}/>
+                        <Link to="/:i/details">
+                            <Pokepic pid={i}/>
+                        </Link>
                     ))}
                 </div>
             </main>

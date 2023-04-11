@@ -1,6 +1,4 @@
-import axios from 'axios';
-
-const Home = () => {
+const Details = () => {
 
     return (
         <div id="home">
@@ -13,4 +11,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default Details;

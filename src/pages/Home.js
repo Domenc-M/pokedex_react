@@ -1,4 +1,5 @@
 import Pokepic from '../components/Pokepic.js';
+import {Link} from 'react-router-dom';
 
     let array = [];
     for (let i = 0; i < 6; i++) {
@@ -14,7 +15,7 @@ const Home = () => {
             <main>
                 <div class="randomPokeContainer">
                     {array.map( i => (
-                        <Link to="/:i/details">
+                        <Link to={'/' + i + '/details'}>
                             <Pokepic pid={i}/>
                         </Link>
                     ))}

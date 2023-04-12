@@ -13,9 +13,9 @@ const Home = () => {
     return (
         <div id="home">
             <main>
-                <div class="randomPokeContainer">
+                <div className="randomPokeContainer">
                     {array.map( i => (
-                        <Link to={'/' + i + '/details'}>
+                        <Link to={'/' + i + '/details'} key={i} >
                             <Pokepic pid={i}/>
                         </Link>
                     ))}

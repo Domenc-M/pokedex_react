@@ -5,7 +5,9 @@ import {
 import axios from 'axios';
 import React from 'react';
 
-
+function withParams(Component) {
+    return props => <Component {...props} params={useParams()} />;
+  }
 
 class PokeDetails extends React.Component {
     constructor(props) {
@@ -21,9 +23,9 @@ class PokeDetails extends React.Component {
 
     // let params = useParams();
     let params = {id: 15};
-    console.log(params.id);
+    console.log(this.props.params.id);
     
-    axios.get("https://pokeapi.co/api/v2/pokemon/"+ params.id +"")
+    axios.get("https://pokeapi.co/api/v2/pokemon/"+ this.props.params.id +"")
     .then(
       (result) => {
         this.pokemon = result.data;
@@ -36,8 +38,8 @@ class PokeDetails extends React.Component {
         return (
             <div id="home">
                 <main>
-                    <Pokepic pid={15}/>
-                    {this.pokemon.height}
+                    <Pokepic pid={this.props.params.id}/>
+                    {/* {this.pokemon.height} */}
                 </main>
             </div>
         );
@@ -45,4 +47,4 @@ class PokeDetails extends React.Component {
 
 };
 
-export default PokeDetails;
+export default withParams(PokeDetails);

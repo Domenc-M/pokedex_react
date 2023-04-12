@@ -3,34 +3,46 @@ import {
     useParams,
   } from "react-router-dom";
 import axios from 'axios';
+import React from 'react';
 
 
 
-const Details = () => {
+class PokeDetails extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        pokemon: null
+      };
+    }
 
-    let params = useParams();
+    componentDidMount() {
+
+        console.log(this.props);
+
+    // let params = useParams();
+    let params = {id: 15};
     console.log(params.id);
-    let pokemon;
-
     
     axios.get("https://pokeapi.co/api/v2/pokemon/"+ params.id +"")
     .then(
       (result) => {
-        pokemon = result.data;
-        console.log(pokemon);
+        this.pokemon = result.data;
+        console.log(this.pokemon);
         });
 
+    }
+    
+    render() {
+        return (
+            <div id="home">
+                <main>
+                    <Pokepic pid={15}/>
+                    {this.pokemon.height}
+                </main>
+            </div>
+        );
+    }
 
-    
-    
-    return (
-        <div id="home">
-            <main>
-            <Pokepic pid={params.id}/>
-            {pokemon.height}
-            </main>
-        </div>
-    );
 };
 
-export default Details;
+export default PokeDetails;

@@ -1,45 +1,28 @@
-import Pokepic from '../components/Pokepic.js';
-import {
-    useParams,
-  } from "react-router-dom";
 import axios from 'axios';
 import React from 'react';
+import { useParams } from "react-router-dom"
 
-function withParams(Component) {
-    return props => <Component {...props} params={useParams()} />;
-  }
+const PokeDetails = (id) => {
+  const [pokemon, setPokemon] = React.useState();
+  const params = useParams();
 
-class PokeDetails extends React.Component {
-    constructor(props) {
-      super(props);
-      this.pokemon = null;
-    }
-
-    componentDidMount() {
-    axios.get("https://pokeapi.co/api/v2/pokemon/"+ this.props.params.id +"")
+    axios.get("https://pokeapi.co/api/v2/pokemon/"+ params.id +"")
     .then(
       (result) => {
-        this.pokemon = result.data;
-        console.log(this.pokemon);
+        setPokemon(result.data);
         });
-    }
-    
-    render() {
-      if (!this.pokemon)
-      {
-        return(<div></div>);
-      }
-      else
-        return (
-            <div id="home">
-                <main>
-                    <Pokepic pid={this.props.params.id}/>
-                    {this.pokemon.height}
-                </main>
-            </div>
-        );
-    }
 
-};
+      if(!pokemon)
+        return(null);
 
-export default withParams(PokeDetails);
+      return (
+        <div id="home">
+          <main>
+            {<img src={pokemon.sprites.front_default}></img>}
+              {pokemon.height}
+          </main>
+        </div>
+      )
+  }
+
+export default PokeDetails;

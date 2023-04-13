@@ -12,34 +12,29 @@ function withParams(Component) {
 class PokeDetails extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {
-        pokemon: null
-      };
+      this.pokemon = null;
     }
 
     componentDidMount() {
-
-        console.log(this.props);
-
-    // let params = useParams();
-    let params = {id: 15};
-    console.log(this.props.params.id);
-    
     axios.get("https://pokeapi.co/api/v2/pokemon/"+ this.props.params.id +"")
     .then(
       (result) => {
         this.pokemon = result.data;
         console.log(this.pokemon);
         });
-
     }
     
     render() {
+      if (!this.pokemon)
+      {
+        return(<div></div>);
+      }
+      else
         return (
             <div id="home">
                 <main>
                     <Pokepic pid={this.props.params.id}/>
-                    {/* {this.pokemon.height} */}
+                    {this.pokemon.height}
                 </main>
             </div>
         );

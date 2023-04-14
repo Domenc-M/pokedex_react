@@ -1,6 +1,10 @@
 const Header =() => {
     return(
-        <div>coucou</div>
+        <Header>
+            <h1>
+                Pokédex
+            </h1>
+        </Header>
     )
 }
 

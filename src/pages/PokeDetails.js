@@ -18,7 +18,7 @@ const PokeDetails = (id) => {
       return (
         <div id="home">
           <main>
-            {<img src={pokemon.sprites.front_default}></img>}
+            {<img src={pokemon.sprites.front_default} alt={pokemon.name}></img>}
               {pokemon.height}
           </main>
         </div>

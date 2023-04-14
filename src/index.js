@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider, } from "react-router-dom";
-import './scss/app.scss'
+import { createBrowserRouter, RouterProvider, } from "react-router-dom";
 import Home from './pages/Home';
 import PokeDetails from './pages/PokeDetails';
+import Header from './components/Header.js'
 
 const router = createBrowserRouter([
     {
@@ -18,7 +18,11 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <div id="app">
+    <Header></Header>
     <RouterProvider router={router} />
+  </div>
+    
 );
 
 // If you want to start measuring performance in your app, pass a function

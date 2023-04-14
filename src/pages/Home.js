@@ -1,4 +1,5 @@
 import Pokepic from '../components/Pokepic.js';
+import '../scss/home.scss'
 import {Link} from 'react-router-dom';
 
     let array = [];

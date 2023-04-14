@@ -1,9 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider, } from "react-router-dom";
-import Home from './pages/Home';
-import PokeDetails from './pages/PokeDetails';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { createBrowserRouter, RouterProvider, } from "react-router-dom"
+import Home from './pages/Home'
+import PokeDetails from './pages/PokeDetails'
 import Header from './components/Header.js'
+import Footer from './components/Footer'
+import './scss/reset.css'
+import './scss/app.scss'
 
 const router = createBrowserRouter([
     {
@@ -21,6 +24,7 @@ root.render(
   <div id="app">
     <Header></Header>
     <RouterProvider router={router} />
+    <Footer></Footer>
   </div>
     
 );

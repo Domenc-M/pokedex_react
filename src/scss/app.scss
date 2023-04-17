@@ -1,9 +1,17 @@
+:root {
+    --main-color: #38b000;
+    --dark: #008000;
+    --darker: #006400;
+    --light: #70e000;
+    --white: rgb(255, 255, 255);
+}
+
 #root {
-    background-color:green;
+    background-color:var(--darker);
     padding:10px;
 }
 
 #app {
-    background-color:white;
+    background-color:var(--white);
     border-radius:20px;
 }

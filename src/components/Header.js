@@ -1,11 +1,13 @@
-const Header =() => {
+import '../scss/header.scss'
+
+const HeaderLayout =() => {
     return(
-        <Header>
+        <header>
             <h1>
                 Pokédex
             </h1>
-        </Header>
+        </header>
     )
 }
 
-export default Header;
+export default HeaderLayout;

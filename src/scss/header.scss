@@ -1,5 +1,21 @@
 header {
     background-color:var(--dark);
     border-radius:20px;
-    padding: 1vh;
+    margin: -1px;
+    padding: 1rem;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-around;
+
+    h1 {
+        color:var(--white);
+        text-align:center;
+        font-size:3rem;
+    }
+
+    input {
+        padding:0;
+        height:1rem;
+    }
 }

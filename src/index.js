@@ -5,7 +5,6 @@ import Home from './pages/Home'
 import PokeDetails from './pages/PokeDetails'
 import HeaderLayout from './components/Header'
 import Footer from './components/Footer'
-import './scss/reset.css'
 import './scss/app.scss'
 
 const router = createBrowserRouter([

@@ -4,6 +4,7 @@
     --darker: #006400;
     --light: #70e000;
     --white: rgb(255, 255, 255);
+    --black: rgb(0, 0, 0);
 }
 
 #root {
@@ -12,6 +13,6 @@
 }
 
 #app {
-    background-color:var(--white);
+    background-color:var(--main-color);
     border-radius:20px;
 }

@@ -1,4 +1,24 @@
 .randomPokeContainer {
-    display:flex;
-    flex-wrap:wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+
+    width:40vw;
+    margin:auto;
+
+    a {
+        text-decoration:none;
+        color:var(--black);
+    }
+}
+
+.welcome {
+    color:var(--white);
+    width:45vw;
+    margin:auto;
+    padding-top:10vh;
+    padding-bottom:10vh;
+    font-size:1.2rem;
 }

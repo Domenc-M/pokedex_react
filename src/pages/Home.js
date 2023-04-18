@@ -14,13 +14,20 @@ const Home = () => {
     return (
         <div id="home">
             <main>
-                <div className="randomPokeContainer">
+                <section className="welcome">
+                    <span>
+                        Welcome to the Pokédex ! <br/>
+                        Here, you can lookup Pokémon stats as much as you want, using the searchbar. <br/>
+                        Meanwhile, here are 6 random Pokémons. <br/>
+                    </span>
+                </section>
+                <section className="randomPokeContainer">
                     {array.map( i => (
                         <Link to={'/' + i + '/details'} key={i} >
                             <Pokepic pid={i}/>
                         </Link>
                     ))}
-                </div>
+                </section>
             </main>
         </div>
     );

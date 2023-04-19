@@ -1,6 +1,8 @@
+import '../scss/footer.scss'
+
 const Footer =() => {
     return(
-        <div>coucou</div>
+        <footer>Powered by React</footer>
     )
 }
 

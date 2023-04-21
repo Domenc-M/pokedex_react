@@ -28,7 +28,7 @@ const PokeDetails = (id) => {
           </div>
         </section>
         <section>
-          {pokemon.height}
+          {pokemon.stats.map(pokemon => <ul key={pokemon.stat.name}> {pokemon.stat.name} : {pokemon.base_stat}</ul>)}
         </section>
       </main>
   )

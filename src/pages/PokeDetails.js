@@ -6,23 +6,32 @@ const PokeDetails = (id) => {
   const [pokemon, setPokemon] = React.useState();
   const params = useParams();
 
+  if(!pokemon)
+  {
     axios.get("https://pokeapi.co/api/v2/pokemon/"+ params.id +"")
     .then(
       (result) => {
         setPokemon(result.data);
         });
+  }
+  console.log(pokemon);
 
-      if(!pokemon)
-        return(null);
+  if(!pokemon)
+    return(null);
 
-      return (
-        <div id="home">
-          <main>
+  return (
+      <main>
+        <section id="sidebar">
+          <div className="pokebox">
+            <div className="pokename">{pokemon.name}</div>
             {<img src={pokemon.sprites.front_default} alt={pokemon.name}></img>}
-              {pokemon.height}
-          </main>
-        </div>
-      )
+          </div>
+        </section>
+        <section>
+          {pokemon.height}
+        </section>
+      </main>
+  )
   }
 
 export default PokeDetails;

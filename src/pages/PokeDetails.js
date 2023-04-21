@@ -28,7 +28,9 @@ const PokeDetails = (id) => {
           </div>
         </section>
         <section>
-          {pokemon.stats.map(pokemon => <ul key={pokemon.stat.name}> {pokemon.stat.name} : {pokemon.base_stat}</ul>)}
+          <ul>
+            {pokemon.stats.map(pokemon => <li key={pokemon.stat.name}> {pokemon.stat.name} : {pokemon.base_stat}</li>)}
+          </ul>
         </section>
       </main>
   )

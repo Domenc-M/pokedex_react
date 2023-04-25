@@ -21,10 +21,14 @@ const PokeDetails = (id) => {
     return(null);
 
   return (
-      <main class="detailsMain">
+      <main className="detailsMain">
         <section>
           <ul>
             {pokemon.stats.map(pokemon => <li key={pokemon.stat.name}> {pokemon.stat.name} : {pokemon.base_stat}</li>)}
+          </ul>
+
+          <ul>
+            {pokemon.types.map(pokemon => <li key={pokemon.type.name}> {pokemon.type.name} </li>)}
           </ul>
         </section>
         <section id="sidebar">

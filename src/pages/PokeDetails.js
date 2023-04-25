@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import { useParams } from "react-router-dom"
+import "../scss/pokedetails.scss"
 
 const PokeDetails = (id) => {
   const [pokemon, setPokemon] = React.useState();
@@ -20,18 +21,19 @@ const PokeDetails = (id) => {
     return(null);
 
   return (
-      <main>
+      <main class="detailsMain">
+        <section>
+          <ul>
+            {pokemon.stats.map(pokemon => <li key={pokemon.stat.name}> {pokemon.stat.name} : {pokemon.base_stat}</li>)}
+          </ul>
+        </section>
         <section id="sidebar">
           <div className="pokebox">
             <div className="pokename">{pokemon.name}</div>
             {<img src={pokemon.sprites.front_default} alt={pokemon.name}></img>}
           </div>
         </section>
-        <section>
-          <ul>
-            {pokemon.stats.map(pokemon => <li key={pokemon.stat.name}> {pokemon.stat.name} : {pokemon.base_stat}</li>)}
-          </ul>
-        </section>
+
       </main>
   )
   }

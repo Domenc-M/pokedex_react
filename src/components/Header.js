@@ -2,10 +2,13 @@ import '../scss/header.scss'
 import axios from 'axios';
 
 function autocompleteSearch() {
-    axios.get("https://pokeapi.co/api/v2/pokemon/?")
+    let input = document.getElementById("searchbar");
+
+    console.log(input.value);
+    axios.get("https://pokeapi.co/api/v2/pokemon/" + input.value + "")
     .then(
         (data) => {
-            console.log(data.data)
+            console.log(data)
         }
         );
   }
@@ -14,7 +17,7 @@ const HeaderLayout =() => {
     return(
         <header>
             <h1>Pokédex</h1>
-            <input type="text" onChange={autocompleteSearch} placeholder="Search..."/>
+            <input id="searchbar" type="text" onChange={autocompleteSearch} placeholder="Search..."/>
         </header>
     )
 }

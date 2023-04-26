@@ -1,8 +1,14 @@
 import '../scss/header.scss'
+import axios from 'axios';
 
 function autocompleteSearch() {
-    console.log("haha");
-}
+    axios.get("https://pokeapi.co/api/v2/pokemon/?")
+    .then(
+        (data) => {
+            console.log(data.data)
+        }
+        );
+  }
 
 const HeaderLayout =() => {
     return(
